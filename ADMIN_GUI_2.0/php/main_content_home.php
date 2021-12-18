@@ -133,7 +133,7 @@
             </a>
 
             <!-- Card Example New Task -->
-            <a class=" dropdown-item col-xl-3 col-md-6 mb-4" data-backdrop="static" data-toggle="modal" href="#AddAdmin">
+            <a class=" dropdown-item col-xl-3 col-md-6 mb-4" data-backdrop="static" data-toggle="modal" href="#studentAttendanceRequest">
                 <!-- <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> -->
                 <div class="align-items-center  ">
                     <div class="card border-left-info shadow h-100 pt-3 align-items-center">
@@ -145,7 +145,7 @@
                         </div>
                         <div class="card-footer container-fluid">
                             <div class="text-xs font-weight-bold no-gutters  text-uppercase d-flex justify-content-between ">
-                                <span class="">View BAL statistics</span>
+                                <span class="">Attendance Request</span>
                                 <span class="rounded-circle bg-secondary text-white-50 px-1">0</span>
                             </div>
                         </div>

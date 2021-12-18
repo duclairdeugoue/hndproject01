@@ -76,7 +76,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">LIST VIEW:</h6>
-                <a class="collapse-item" href="./display_admin_list.php">BAL List</a>
+                <a class="collapse-item" href="./attendance_report.php">Manage Attendance</a>
                 <a class="collapse-item" href="./display_student_list.php">Student List</a>
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Other Pages:</h6>

@@ -81,7 +81,7 @@ session_start();
     <?php
     //  Main content 
     include('./php/modals.php');
-    include('./Add_admins/SA_regist_Admin.php');
+    // include('./Add_admins/SA_regist_Admin.php');
     include('./Register_marks/index.php');
     // End of of Main content
     ?>
