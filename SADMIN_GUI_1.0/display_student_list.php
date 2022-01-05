@@ -137,7 +137,7 @@ include('./includes/connection1.php');
         <script src="./js/My_student_CRUD.js"></script>
         <!-- <script src="./js/myjs.js"></script> -->
 
-        <script src="../Myvendor1/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+        <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
         <!-- <script src="./js/create_account.js"></script> -->
 
         <!-- Page level plugins -->

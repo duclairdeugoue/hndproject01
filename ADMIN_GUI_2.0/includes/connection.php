@@ -1,8 +1,8 @@
 <?php
 
-    $con = mysqli_connect('localhost','Doubled','123','software');
+    $con = mysqli_connect('localhost','root','','software');
     if(!$con)
     {
-        die('Please check your connection' . mysqli_error());
+        die('Please check your connection' . mysqli_connect_error());
     }
 ?>

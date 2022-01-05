@@ -42,7 +42,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p id="message_1"></p>
+                    <p style="color: red;" id="message_1"></p>
                     <form action="" class="form needs-validation">
                         <div class="d-flex row">
                             <div class="form-group col-sm-6">
@@ -122,7 +122,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p id="message_3"></p>
+                    <p style="color: red;" id="message_3"></p>
                     <form action="" class="form needs-validation">
                         <div class="d-flex row">
                             <div class="form-group col-sm-6">

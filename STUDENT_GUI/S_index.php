@@ -55,7 +55,7 @@ include('./includes/connection1.php');
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../Myvendor1/jquery/jquery.min.js"></script>
+    <script src="../Myvendor1/jquery/jquery-3.4.1.min.js"></script>
     <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script> <!-- helps to impliment dropdown-->
 
     <!-- Core plugin JavaScript-->
@@ -68,7 +68,7 @@ include('./includes/connection1.php');
     <script src="./js/My_student_CRUD.js"></script>
     <!-- <script src="./js/myjs.js"></script> -->
 
-    <script src="../Myvendor1/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+    <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
     <!-- <script src="./js/create_account.js"></script> -->
 </body>
 </html>

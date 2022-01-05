@@ -12,7 +12,7 @@
     </div>
 </div>  -->
 
-    <!-- Add Admin Modals-insert_modal -->
+    <!-- Add student Modals-insert_modal -->
     <div class="modal fade" id="Addstudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -23,7 +23,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p id="message_2"></p>
+                    <p style="color: red;" id="message_2"></p>
                     <form action="" class="form needs-validation">
                         <div class="d-flex row">
                             <div class="form-group col-sm-6">

@@ -1,17 +1,3 @@
-<?php
-    //  session_start();
-    
-    //  if(isset($_SESSION['sadmin_is_logged_in'])){
-    //     header('location: SADMIN_GUI_1.0/SA_index.php');
-    //  }
-    //  if(isset( $_SESSION['admin_is_logged_in'])){
-    //     header('location: ADMIN_GUI_2.0/A_index.php');
-    //  }
-    //  if(isset( $_SESSION['student_is_logged_in'])){
-    //     header('location: STUDENT_GUI/S_index.php');
-    //  }
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +76,7 @@
             </div>
             <div class="tm-col-right tm-col-footer">
                 <footer class="tm-site-footer text-right">
-                    <p class="mb-0">Copyright 2021 DoubleD Co.
+                    <p class="mb-0">Copyright 2022 DoubleD Co.
 
                 </footer>
             </div>

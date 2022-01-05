@@ -28,14 +28,6 @@ include('./includes/connection1.php');
 </head>
 
 <body id="page-top">
-    <!-- <div id="wrapper">
-        <div class="folding-square">
-            <span class="square"></span>
-            <span class="square"></span>
-            <span class="square"></span>
-            <span class="square"></span>
-        </div>
-    </div> -->
 
     <?php
     //  Topbar 
@@ -95,7 +87,7 @@ include('./includes/connection1.php');
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../Myvendor1/jquery/jquery.min.js"></script>
+    <script src="../Myvendor1/jquery/jQuery-3.5.1.min.js"></script>
     <script src="../Myvendor1/datatables/jquery.dataTables.min.js"></script>
     <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script> <!-- helps to impliment dropdown-->
 
@@ -110,8 +102,7 @@ include('./includes/connection1.php');
     <script src="./js/My_lecturer_CRUD.js"></script>
     <!-- <script src="./js/myjs.js"></script> -->
     <script src="../Myvendor1/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="../Myvendor1/bootstrap-4.0.0/js/bootstrap.min.js"></script>
-    
+    <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
        
 
         <!-- Page level custom scripts -->

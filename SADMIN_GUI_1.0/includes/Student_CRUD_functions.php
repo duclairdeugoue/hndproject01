@@ -1,11 +1,11 @@
 <?php
 
-require_once('../includes/connection2.php');
+require_once('../includes/connection1.php');
 
 //Insert Record Function
 function InsertStudent_Record()
 {
-    global $conn;
+    global $con;
     $sname = $_POST['SName'];
     $ssname = $_POST['SSname'];
     $sDOB = $_POST['SDOB'];
@@ -17,13 +17,13 @@ function InsertStudent_Record()
     // $amatricule = $_POST['Amatricule'];
 
     // echo $aname,$asname,$aDOB,$asexe,$amatricule,$fxn;
-    $query = "insert into persons(name,surname,sex,date_of_birth,person_type) values ('$sname','$ssname','$ssexe','$sDOB','2')";
-    $result = mysqli_query($conn, $query);
+    $query = "INSERT INTO persons(name,surname,sex,date_of_birth,person_type) values ('$sname','$ssname','$ssexe','$sDOB','2')";
+    $result = mysqli_query($con,$query);
     if ($result) {
-        $person_id = mysqli_insert_id($conn);
+        $person_id = mysqli_insert_id($con);
         
-        $query = "insert into students(level,speciality,Department,id_person,function) values ('$slevel','$sspeciality','$sdepartment','$person_id','$sfxn')";
-        $result = mysqli_query($conn,$query);
+        $query = "INSERT INTO students(level,speciality,Department,id_person,function) values ('$slevel','$sspeciality','$sdepartment','$person_id','$sfxn')";
+        $result = mysqli_query($con,$query);
 
 
         if (!$result) {
@@ -40,8 +40,8 @@ function InsertStudent_Record()
 function Student_count(){
     global $con;
     $i= 0; 
-    $query = "SELECT matricule FROM `lecturers` WHERE 1"; 
-    $result = mysqli_query($con, $query);
+    $query = "SELECT matricule FROM `students` WHERE 1"; 
+    $result = mysqli_query($con,$query);
     while ($row = mysqli_fetch_assoc($result)) { 
          $i+=1;
        } 
@@ -97,3 +97,4 @@ function display_student_record()
     // echo json_encode([status:"success", html:$value]);
 }
 
+?>

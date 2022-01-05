@@ -12,18 +12,18 @@
         // $ptf = $_POST['ptf'];
         // $amatricule = $_POST['Amatricule'];
 
-        // echo $aname,$asname,$aDOB,$asexe,$amatricule,$fxn;
-        $query = "insert into persons(name,surname,sex,date_of_birth,person_type) values ('$lname','$lsname','$lsexe','$lDOB','3')";
-        $result = mysqli_query($con, $query);
+        // echo $lname,$lsname,$lDOB,$lsexe;
+        $query = "INSERT INTO persons(name,surname,sex,date_of_birth,person_type) values ('$lname','$lsname','$lsexe','$lDOB','3')";
+        $result = mysqli_query($con,$query);
 
         $person_id = mysqli_insert_id($con);
 
-        $query = "insert into lecturers(id_person) values ('$person_id')";
-        $result = mysqli_query($con, $query);
+        $query = "INSERT INTO lecturers(id_person) values ('$person_id')";
+        $result = mysqli_query($con,$query);
         if (!$result) {
             echo 'please check your query';
         } else {
-            echo 'Your record has been successfuly entered into our Database';
+            echo "<h3 class = 'text-bold text-success'>Your record has been successfuly entered into our Database</h3>";
         }
     }
     // To count the number of lecturer present in the DB
@@ -38,4 +38,6 @@
             echo "<script>$('#lec_count').html('<html>".$i."</html>');</script>";
     }
 
+    // Insert_Lecturer_Record();
+    // Lecture_count();
 ?>

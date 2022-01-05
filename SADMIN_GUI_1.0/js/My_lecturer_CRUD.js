@@ -1,6 +1,8 @@
 $(document).ready(function()
 {
+    // alert('Working');
     insert_lecturer_record();
+   
    
 
 })
@@ -11,6 +13,7 @@ function insert_lecturer_record()
     
     $(document).on('click','#btn_add_lecturer',function()
     {
+        
         var Lec_name = $('#lname').val();
         var Lec_sname = $('#lsname').val(); 
         var Lec_DOB = $('#lDOB').val(); 
@@ -24,10 +27,10 @@ function insert_lecturer_record()
         if(Lec_name == "" || Lec_sname == "" || Lec_DOB == "" || Lec_sexe == "")
         {
             $('#message_3').html('Please fill in the blank space');
+            
         }
         else
-        {
-            
+        { 
             // Ajax Request
             $.ajax(
                 {
