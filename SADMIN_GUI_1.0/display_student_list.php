@@ -9,7 +9,7 @@ include('./includes/connection1.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Student list</title>
     <!-- <link rel="stylesheet" href="./Myvendor1/bootstrap-4.0.0-dist/css/bootstrap.min.css"> -->
     <!-- this is bootstrap version 4.6 -->
     <link rel="stylesheet" href="../Myvendor1/bootstrap-4.0.0-dist/icons/font/bootstrap-icons.css">
@@ -22,42 +22,38 @@ include('./includes/connection1.php');
     <!-- Custom styles for this template-->
     <link href="./css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/modal_fullscreen-bs5.css">
-    <!-- <link rel="stylesheet" href="./css/create_account.css"> -->
-
+    <link rel="stylesheet" href="./css/text-style.css">
 
 </head>
 
 <body id="page-top">
-    <!-- <div id="wrapper">
-        <div class="folding-square">
-            <span class="square"></span>
-            <span class="square"></span>
-            <span class="square"></span>
-            <span class="square"></span>
-        </div>
-    </div> -->
-
     <?php
     //  Topbar 
     require('../php/header.php');
     // End of Topbar
 
     ?>
-    <!--  -->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div class="card my-2 mx-2 ">
-                <div class="card-title my-2 ml-5">
-                    <button type="button" class="btn btn-info" data-backdrop="static" data-toggle="modal" data-target="#Addstudent">Add New Student </button>
-                    <a href="SA_index.php" class="btn btn-secondary ">Home</a>
-                    <div class="card-body">
-                        <p id="delete-message"></p>
-                        <div class="" id="table_student_display">
-                            <h1 class="text-center">LIST OF ALL STUDENTS</h1>
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <div id="content-wrapper" class="">
+            <div class="card mx-2 ">
+                <div class="card-title ">
+                    <div class="card-header d-sm-flex d-md-flex justify-content-between">
+                        <div class=""><a href="SA_index.php" class="btn btn-secondary col py-2 mt-3">Home</a></div>
+                        <div class=" "><button type="button" class="btn btn-info col py-2 mt-3" data-backdrop="static" data-toggle="modal" data-target="#Addstudent">Add New Student </button>
+                        </div>
+                        <!-- <span class="col-9 mt-3"></span> -->
+
+                    </div>
+                    <div class="card-body d-sm-flex-column">
+                        <!-- <div class="bg-info">tester</div> -->
+                        <div class="text-center ">
+                            <h3 class="text-responsive">LIST OF ALL STUDENTS</h3>
+                        </div>
+                        <div class="scrollable" id="">
+                            <table class="table table-bordered " id="dataTable"  cellspacing="0">
                                 <thead>
                                     <tr>
                                         <td>N°</td>
@@ -81,8 +77,8 @@ include('./includes/connection1.php');
 
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         // take note about this dot near the equalsign,they should be together
-                                         echo '<tr>
-                                            <td>'.$i.'</td>
+                                        echo '<tr>
+                                            <td>' . $i . '</td>
                                             <td>' . $row['name'] . '</td>
                                             <td>' . $row['surname'] . '</td>
                                             <td>' . $row['sex'] . '</td>
@@ -93,7 +89,7 @@ include('./includes/connection1.php');
                                             <td class="text-center"><button class="btn btn-success " id="btn_edit_student" data-id =' . $row['id_person'] . '><span class ="fa fa-edit"></span></button></td>
                                             <td class="text-center"><button class="btn btn-danger" id="btn_delete_student" data-id1 =' . $row['id_person'] . '><span class ="fa fa-trash"></span></button></td>
                                         </tr>';
-                                        $i = $i+1;
+                                        $i = $i + 1;
                                     }
 
                                     ?>
@@ -101,16 +97,15 @@ include('./includes/connection1.php');
                             </table>
                         </div>
                     </div>
-                    <?php
-                    //  Main content 
-
-                    include('./Add_student/SA_regist_Student.php');
-                    include('./php/main_footer.php');
-                    // End of of Main content
-                    ?>
                     <!-- End of Footer -->
-
+                    <div class="card-footer">
+                        <?php include('./php/main_footer.php'); ?>
+                    </div>
                 </div>
+                <!-- Modal for the create student -->
+                <?php include('./Add_student/SA_regist_Student.php'); ?>
+
+
                 <!-- End of Content Wrapper -->
 
             </div>
@@ -122,31 +117,31 @@ include('./includes/connection1.php');
             </a>
         </div>
 
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../Myvendor1/jquery/jquery.min.js"></script>
+    <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script> <!-- helps to impliment dropdown-->
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="../Myvendor1/jquery/jquery.min.js"></script>
-        <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script> <!-- helps to impliment dropdown-->
+    <!-- Core plugin JavaScript-->
+    <script src="../Myvendor1/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="../Myvendor1/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="./js/sb-admin-2.min.js"></script>
+    <!-- <script src="./js/My_course_CRUD.js"></script>
+        <script src="./js/My_admin_CRUD.js"></script> -->
+    <script src="./js/My_student_CRUD.js"></script>
+    <!-- <script src="./js/myjs.js"></script> -->
 
-        <!-- Custom scripts for all pages-->
-        <script src="./js/sb-admin-2.min.js"></script>
-        <!-- <script src="./js/My_course_CRUD.js"></script>
-            <script src="./js/My_admin_CRUD.js"></script> -->
-        <script src="./js/My_student_CRUD.js"></script>
-        <!-- <script src="./js/myjs.js"></script> -->
+    <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <!-- <script src="./js/create_account.js"></script> -->
 
-        <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
-        <!-- <script src="./js/create_account.js"></script> -->
+    <!-- Page level plugins -->
+    <script src="../Myvendor1/datatables/jquery.dataTables.min.js"></script>
+    <script src="../Myvendor1/datatables/dataTables.bootstrap4.min.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="../Myvendor1/datatables/jquery.dataTables.min.js"></script>
-        <script src="../Myvendor1/datatables/dataTables.bootstrap4.min.js"></script>
-
-        <!-- Page level custom scripts -->
-        <script src="./js/demo/datatables-demo.js"></script>
-        <!-- <script src="./includes/Student_CRUD_functions.php"></script> -->
+    <!-- Page level custom scripts -->
+    <script src="./js/demo/datatables-demo.js"></script>
+    <!-- <script src="./includes/Student_CRUD_functions.php"></script> -->
 
 </body>
 

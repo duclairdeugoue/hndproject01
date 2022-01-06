@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome page</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
-    <!-- https://fonts.google.com/ -->
+    
     <link rel="stylesheet" href="./Myvendor1/bootstrap-4.0.0-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./Myvendor1/fontawesome/css/all.min.css">
     <link href="css/templatemo-diagoona.css" rel="stylesheet" />
@@ -25,9 +25,6 @@
                     <img src="./img/HND -1.png" height="25%" width="100%" class="d-sm-block" alt="">
                         <i class="fas fa-umbrella-beach fa-3x mt-1 tm-logo"></i>
                         <div class="media-body">
-                            <!-- <h1 class="tm-sitename text-uppercase">Double D</h1>
-                            <p class="tm-slogon">Welcome to our new platform</p> -->
-                            
                         </div>
                     </div>
                 </div>
@@ -76,7 +73,7 @@
             </div>
             <div class="tm-col-right tm-col-footer">
                 <footer class="tm-site-footer text-right">
-                    <p class="mb-0">Copyright 2022 DoubleD Co.
+                    <p class="mb-0">@ Copyright 2021-<?php echo date('Y'); ?> DoubleD Co.
 
                 </footer>
             </div>
