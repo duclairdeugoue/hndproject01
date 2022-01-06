@@ -1,4 +1,4 @@
-
+<?php //header('location:../index.php');?>
     <!-- <div class="row">
         <div class="col">
             <div class="card mt-5">

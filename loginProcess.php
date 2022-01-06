@@ -1,7 +1,7 @@
 <?php
-    session_start();
+session_start();
     
-    include './includes/connection1.php';
+include './includes/connection1.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,22 +38,21 @@
                 if ($ptype == 0) {
                     $_SESSION['uname'] = $name_b;
                     $_SESSION['pwd'] = $password_b;
-                    $_SESSION['sadmin_is_logged_in'] = TRUE;
-                    // require('./SADMIN_GUI_1.0/SA_index.php');
-                    // header("status: 301 Moved Permanently",false,301);
+                    $_SESSION['user_is_logged_in'] = true;
+
                     header('location: SADMIN_GUI_1.0/SA_index.php');
                     exit;
                 } elseif ($ptype == 1) {
                     $_SESSION['uname'] = $name_b;
                     $_SESSION['pwd'] = $password_b;
-                    $_SESSION['admin_is_logged_in'] = TRUE;
-                    // require('./ADMIN_GUI_2.0/A_index.php');
+                    $_SESSION['user_is_logged_in'] = true;
+
                     header('location: ADMIN_GUI_2.0/A_index.php');
                     exit;
                 } elseif ($ptype == 2) {
                     $_SESSION['uname'] = $name_b;
                     $_SESSION['pwd'] = $password_b;
-                    $_SESSION['student_is_logged_in'] = TRUE;
+                    $_SESSION['user_is_logged_in'] = true;
                     // require("./STUDENT_GUI/index.php");
                     header('location: STUDENT_GUI/S_index.php');
                     exit;
@@ -61,7 +60,7 @@
                  elseif ($ptype == 3) {
                     $_SESSION['uname'] = $name_b;
                     $_SESSION['pwd'] = $password_b;
-                    $_SESSION['student_is_logged_in'] = TRUE;
+                    $_SESSION['user_is_logged_in'] = true;
                     // require("./STUDENT_GUI/index.php");
                     header('location: LECTURER_GUI/L_index.php');
                     exit;
@@ -76,6 +75,11 @@
                 }
             }
         }
+        if(!isset($_POST['login'])){
+            header('location:index.php');
+            exit;
+        }
+        header('location:index.php');
 
         ?>
     </table>

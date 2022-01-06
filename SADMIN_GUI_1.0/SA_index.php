@@ -1,5 +1,7 @@
 <?php
 session_start();
+require '../includes/loginCheck.php';
+
 include('./includes/connection1.php');
 ?>
 <!DOCTYPE html>

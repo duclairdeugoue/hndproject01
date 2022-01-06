@@ -160,7 +160,7 @@ include('./includes/connection1.php');
                     <div class="card-title my-1 ml-1">
                         <div class="card-header">
                             <p class="p-2 text-center text-danger" id="errormsg"></p>
-                            <form class="form-inline" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                            <form class="form-inline d-md-flex justify-content-around" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                 <div class="form-group p-2 search-box">
                                     <label for="speciality" class="text-dark">Select speciality: </label>
                                     <input type="text" autocomplete="off" class="form-control mt-2" name="speciality" id="speciality" placeholder="Search speciality..." required>
@@ -198,8 +198,8 @@ include('./includes/connection1.php');
                                         <option id="show2" value="15-17" style="display: none;">15-17</option>
                                     </select>
                                 </div>
-                                <div class="form-group p-2">
-                                    <button class="btn btn-success mt-4 ml-5" id="search_now" name="search_now">Search Now</button>
+                                <div class="form-group p-2 ">
+                                    <button class="btn btn-success mt-4 " id="search_now" name="search_now">Search Now</button>
                                 </div>
                             </form>
                         </div>
