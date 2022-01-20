@@ -1,0 +1,22 @@
+.login-form
+{
+    position: relative;
+    width: 340px;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+input[type = text],input[type = password]
+{
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: 1px;
+    background-color: none;
+    
+
+}
+input:-webkit-autofill
+{
+    -webkit-box-shadow: 0 0 0px 1000px rgba(0,0,0,0.4) inset;
+    -webkit-text-fill-color: white !important;
+}

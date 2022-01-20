@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 19, 2021 at 05:57 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- Host: localhost
+-- Generation Time: Jan 18, 2022 at 05:30 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -78,7 +78,7 @@ INSERT INTO `courses` (`id_course`, `title`, `credit`, `level`, `course_outline`
 
 CREATE TABLE `lecturers` (
   `matricule` int(11) NOT NULL,
-  `Portofolio` varchar(80) NOT NULL,
+  `Portofolio` varchar(80) DEFAULT NULL,
   `id_person` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -92,7 +92,11 @@ INSERT INTO `lecturers` (`matricule`, `Portofolio`, `id_person`) VALUES
 (3, '', 22),
 (4, '', 23),
 (5, '', 24),
-(6, '', 25);
+(6, '', 25),
+(7, NULL, 27),
+(8, NULL, 29),
+(9, NULL, 32),
+(10, NULL, 34);
 
 -- --------------------------------------------------------
 
@@ -121,8 +125,8 @@ CREATE TABLE `persons` (
   `surname` varchar(50) NOT NULL,
   `sex` varchar(10) NOT NULL,
   `date_of_birth` date NOT NULL,
-  `login` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `login` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
   `person_type` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -143,7 +147,18 @@ INSERT INTO `persons` (`id_person`, `name`, `surname`, `sex`, `date_of_birth`, `
 (22, 'Nsankong', 'Boris', 'Male', '2021-09-08', '', '', 3),
 (23, 'give', 'now', 'Male', '2021-09-04', '', '', 3),
 (24, 'Duc', 'einstein', 'Male', '2021-09-21', '', '', 3),
-(25, 'Numbu', 'Clif', 'Male', '2021-09-18', '', '', 3);
+(25, 'Numbu', 'Clif', 'Male', '2021-09-18', '', '', 3),
+(27, 'testing', 'tester', 'Male', '2022-01-05', NULL, NULL, 3),
+(28, 'Awa', 'Donacien', 'Male', '2022-01-06', NULL, NULL, 2),
+(29, 'Bangsi', 'Rene', 'Male', '2022-01-07', NULL, NULL, 3),
+(30, 'Merynda', 'Joyce', 'Female', '2003-05-27', NULL, NULL, 2),
+(31, 'Camilla Carver', 'Carson', 'Male', '2012-11-01', NULL, NULL, 2),
+(32, 'Demetria Page', 'Oneil', 'Female', '2019-12-26', NULL, NULL, 3),
+(33, 'Dilane', 'Chris', 'Male', '2022-01-05', NULL, NULL, 2),
+(34, 'Djomo', 'Riky', 'Male', '2022-01-06', NULL, NULL, 3),
+(35, 'Fallon Serrano', 'Pickett', 'Female', '2015-08-22', NULL, NULL, 2),
+(36, 'Brenna Moon', 'Hensley', 'Female', '2013-12-17', NULL, NULL, 2),
+(37, 'Nash Medina', 'Richmond', 'Female', '1992-01-04', NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -207,7 +222,7 @@ CREATE TABLE `students` (
   `speciality` varchar(50) NOT NULL,
   `Department` varchar(30) NOT NULL,
   `id_person` int(11) NOT NULL,
-  `function` varchar(30) NOT NULL
+  `function` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -217,7 +232,14 @@ CREATE TABLE `students` (
 INSERT INTO `students` (`matricule`, `level`, `speciality`, `Department`, `id_person`, `function`) VALUES
 (2, 2, 'SWE', 'CE', 3, 'Anti'),
 (4, 2, 'SWE', 'CE', 14, 'Delegate'),
-(5, 3, 'SWE', 'CE', 16, 'Student');
+(5, 3, 'SWE', 'CE', 16, 'Student'),
+(6, 2, 'SWE', 'CE', 28, ''),
+(7, 1, 'SWE', 'CE', 30, 'Good girl'),
+(8, 1, 'SWE', 'ACT', 31, 'Magna fugiat aut aut'),
+(9, 1, 'SWE', 'CE', 33, 'Bro of Joyce'),
+(10, 2, 'NWS', 'CE', 35, 'Quo dolor inventore '),
+(11, 3, 'NWS', 'CE', 36, 'Non molestiae sint i'),
+(12, 3, 'TEL', 'CE', 37, 'Non omnis et labore ');
 
 -- --------------------------------------------------------
 
@@ -315,7 +337,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `lecturers`
 --
 ALTER TABLE `lecturers`
-  MODIFY `matricule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `matricule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `marks`
@@ -327,7 +349,7 @@ ALTER TABLE `marks`
 -- AUTO_INCREMENT for table `persons`
 --
 ALTER TABLE `persons`
-  MODIFY `id_person` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_person` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `specialities`
@@ -345,7 +367,7 @@ ALTER TABLE `specialities_courses`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `matricule` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `matricule` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

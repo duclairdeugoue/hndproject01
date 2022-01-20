@@ -1,6 +1,5 @@
 <?php
 session_start();
-    
 include './includes/connection1.php';
 ?>
 <!DOCTYPE html>
@@ -10,8 +9,10 @@ include './includes/connection1.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Authentification</title>
     <link rel="stylesheet" href="./Myvendor1/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <!-- <link href="css/templatemo-diagoona.css" rel="stylesheet" /> -->
+
 </head>
 
 <body>
@@ -28,12 +29,14 @@ include './includes/connection1.php';
 
             $name = mysqli_real_escape_string($con, $name_b);
             $password = mysqli_real_escape_string($con, $password_b);
-            $query = "SELECT person_type from persons where login = '$name' AND password = '$password'  ";
+            $query = "SELECT person_type,id_person from persons where login = '$name' AND password = '$password'  ";
             $result = mysqli_query($con, $query);
             $ptype = -1;
+            $function = "Testing";
             if ($result) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     $ptype =  $row["person_type"];
+                    $id = $row["id_person"];
                 }
                 if ($ptype == 0) {
                     $_SESSION['uname'] = $name_b;
@@ -53,29 +56,35 @@ include './includes/connection1.php';
                     $_SESSION['uname'] = $name_b;
                     $_SESSION['pwd'] = $password_b;
                     $_SESSION['user_is_logged_in'] = true;
-                    // require("./STUDENT_GUI/index.php");
-                    header('location: STUDENT_GUI/S_index.php');
+                    $_SESSION['id']  = $id;
+                    $_SESSION['role']  = $_row['fucntion'];
+                    
+                    header("location: studentDelegateLogin.php");
                     exit;
+                    
                 }   
                  elseif ($ptype == 3) {
                     $_SESSION['uname'] = $name_b;
                     $_SESSION['pwd'] = $password_b;
                     $_SESSION['user_is_logged_in'] = true;
                     // require("./STUDENT_GUI/index.php");
-                    header('location: LECTURER_GUI/L_index.php');
+                    header('location: Attendance/L_index.php');
                     exit;
                  }
                  else {
                     require('index.php');
-                    echo " <script>
-                    $(document).ready(function() {
-                        $('#msg').html('Please check your information');
-                    });
-                </script>";
+                    // header("location:index.php");
+                    echo "  <script>
+                                $(document).ready(function() {
+                                    $('#msg').html('Please check your information');
+                                });
+                            </script>"
+                    ;
                 }
             }
         }
         if(!isset($_POST['login'])){
+            mysqli_close($con);
             header('location:index.php');
             exit;
         }

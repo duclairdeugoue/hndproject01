@@ -103,6 +103,7 @@ include('./includes/connection1.php');
     <script src="./js/My_student_CRUD.js"></script>
     <script src="./js/My_lecturer_CRUD.js"></script>
     <!-- <script src="./js/myjs.js"></script> -->
+    <script src="../Myvendor1/popper/popper-3.5.min.js"></script>
     <script src="../Myvendor1/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="../Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
        

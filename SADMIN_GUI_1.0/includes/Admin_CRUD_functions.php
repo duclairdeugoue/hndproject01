@@ -30,7 +30,7 @@
     function Admin_count(){
         global $con;
         $i= 0; 
-        $query = "SELECT matricule FROM `lecturers` WHERE 1"; 
+        $query = "SELECT code FROM `admins` WHERE 1"; 
         $result = mysqli_query($con, $query);
         while ($row = mysqli_fetch_assoc($result)) { 
              $i+=1;

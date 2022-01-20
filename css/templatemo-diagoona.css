@@ -85,11 +85,7 @@ p { line-height: 1.9; }
     padding-right: 70px;
 }
 
-.tm-content {
-    /* max-width: 660px;
-    margin-top: 50px;
-    padding-right: 20px; */
-}
+
 
 .tm-about { max-width: 525px; }
 
@@ -166,10 +162,7 @@ hr { border-top: 1px solid white; }
         margin-top: 50px;
     }
 
-    .tm-content {
-        /* max-height: none;
-        margin-top: 40px; */
-    }
+    
 
     .tm-col-right {
         padding-top: 40px;
