@@ -1,0 +1,52 @@
+/* body design */
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.landingContent
+{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+}
+/* image div for the background */
+.bg
+{
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.355;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgb(132, 117, 228);
+}
+
+/* image for the background */
+.landingImage
+{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    max-height: 100vh;
+}
+ .landingMessage
+{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+.text-responsive
+{
+}
+.landingLogo
+{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}

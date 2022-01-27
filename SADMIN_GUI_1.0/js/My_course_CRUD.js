@@ -16,13 +16,13 @@ function insert_course_record()
         var Ctitle = $('#Coursetitle').val(); 
         var Ccredit = $('#Coursecredit').val(); 
         var Scode = $('#Specialitycode').val(); 
-        var Cspeciality = $('#Coursespeciality').val(); 
+        // var Cspeciality = $('#Coursespeciality').val(); 
         var Clevel = $('#Courselevel').val(); 
         var Course_outline = $('#Course_outline').val(); 
          // var Ccode = $('#Coursecode').val();
         // console.log(User,Email);  help test the function if the value display properly
         // Ccode == "" ||
-        if( Ctitle == "" || Ccredit == "" || Cspeciality == "" || Clevel == "" || Course_outline == ""|| Scode == "")
+        if( Ctitle == "" || Ccredit == "" || Clevel == "" || Course_outline == ""|| Scode == "")
         {
             $('#Cmessage').html('Please fill in the blank space');
         }
@@ -33,7 +33,7 @@ function insert_course_record()
                 {
                     url :'Add_courses/insert.php',  // send request to
                     method :'post',    // send requst method
-                    data :    {CST : Ctitle,CSC : Ccredit,SCD : Scode,CSS : Cspeciality,CSL : Clevel,CSO: Course_outline},  // data to send
+                    data :    {CST : Ctitle,CSC : Ccredit,SCD : Scode,CSL : Clevel,CSO: Course_outline},  // data to send
                     success:  function(data) //if the request is sucessful
                     {
                        // help to display any message in the modal precisely in the <p> tag

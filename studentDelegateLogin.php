@@ -16,7 +16,7 @@ if ($result) {
     }
         
     if($function == "Delegate"){
-        header('location: Attendance/L_index.php');
+        header('location: Attendance/D_index.php');
         exit;
     }
     else{

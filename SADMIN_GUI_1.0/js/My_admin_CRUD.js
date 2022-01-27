@@ -21,7 +21,7 @@ function insert_admin_record()
 
         if(Admin_name == "" || Admin_sname == "" || Admin_DOB == "" || Admin_sexe == "" || Admin_function == "")
         {
-            $('#message_1').html('Please fill in the blank space');
+            $('#message_4').html('Please fill in the blank space');
         }
         else
         {
@@ -35,7 +35,7 @@ function insert_admin_record()
                     success:  function(data) //if the request is sucessful
                     {
                        // help to display any message in the modal precisely in the <p> tag
-                        $('#message_1').html(data);
+                        $('#message_4').html(data);
                         $('#AddAdmin').modal('show');
                         // to reset form after validation,help to avoid reloading the page
                         $('form').trigger('reset');
@@ -49,7 +49,7 @@ function insert_admin_record()
     $(document).on('click','#btn_close',function()
     {
         $('form').trigger('reset');
-        $('#message_1').html('');
+        $('#message_4').html('');
     })
 
 }

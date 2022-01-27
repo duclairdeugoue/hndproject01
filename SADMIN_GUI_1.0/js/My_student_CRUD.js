@@ -15,11 +15,11 @@ function insert_student_record()
         var Student_DOB = $('#sDOB').val(); 
         var Student_sexe = $('#ssexe').val(); 
         var Student_function  = $('#sfxn').val();
-        var Student_department = $('#sdepartment').val();
+        // var Student_department = $('#sdepartment').val();
         var Student_speciality = $('#sspeciality').val();
         var Student_level = $('#slevel').val();
 
-        if(Student_name == "" || Student_sname == "" || Student_DOB == "" || Student_sexe == "" || Student_department == "" || Student_speciality == "" || Student_level == "")
+        if(Student_name == "" || Student_sname == "" || Student_DOB == "" || Student_sexe == "" || Student_speciality == "" || Student_level == "")
         {
             $('#message_2').html('Please fill in the blank space');
         }
@@ -31,7 +31,7 @@ function insert_student_record()
                 {
                     url :'Add_student/SA_insert.php',  // send request to
                     method :'post',    // send requst method
-                    data :    {SName : Student_name,SSname : Student_sname,SDOB : Student_DOB,SSex : Student_sexe,Sfxns : Student_function,Sdepartment : Student_department,Sspeciality : Student_speciality,Slevel : Student_level},  // data to send
+                    data :    {SName : Student_name,SSname : Student_sname,SDOB : Student_DOB,SSex : Student_sexe,Sfxns : Student_function,Sspeciality : Student_speciality,Slevel : Student_level},  // data to send
                     success:  function(data) //if the request is sucessful
                     {
                        // help to display any message in the modal precisely in the <p> tag

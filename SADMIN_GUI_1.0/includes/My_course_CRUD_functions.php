@@ -1,6 +1,6 @@
 <?php
 
-require_once('./includes/connection1.php');
+require_once('../includes/connection1.php');
 
 //Insert Record Function
 function insert_course_record()
@@ -25,7 +25,7 @@ function insert_course_record()
         if (!$result) {
              echo 'please check your query';
         } else {
-        echo 'Your record has been successfuly entered into our Database';
+        echo '<h3 class = "text-success">Your record has been successfuly entered into our Database</h3>';
         }
     }
     else{

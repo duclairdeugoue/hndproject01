@@ -2,6 +2,21 @@
 
 require_once('../includes/connection1.php');
 
+function GetSpecialityLevelID($speciality,$level)
+{
+    global $con;
+
+    $query   = "SELECT speclevel FROM specialities_levels WHERE speciality_id = '$speciality' AND level_id = '$level'";
+    $result = mysqli_query($con,$query);
+
+    while( $row = mysqli_fetch_assoc($result))
+    {
+        $student_speciality_level = $row['speclevel'];
+    }
+
+    return $student_speciality_level;
+
+}
 //Insert Record Function
 function InsertStudent_Record()
 {
@@ -11,9 +26,9 @@ function InsertStudent_Record()
     $sDOB = $_POST['SDOB'];
     $ssexe = $_POST['SSex'];
     $sfxn = $_POST['Sfxns'];
-    $sdepartment = $_POST['Sdepartment'];
     $sspeciality = $_POST['Sspeciality'];
     $slevel = $_POST['Slevel'];
+    $ssl = GetSpecialityLevelID($sspeciality,$slevel);
     // $amatricule = $_POST['Amatricule'];
 
     // echo $aname,$asname,$aDOB,$asexe,$amatricule,$fxn;
@@ -22,7 +37,7 @@ function InsertStudent_Record()
     if ($result) {
         $person_id = mysqli_insert_id($con);
         
-        $query = "INSERT INTO students(level,speciality,Department,id_person,function) values ('$slevel','$sspeciality','$sdepartment','$person_id','$sfxn')";
+        $query = "INSERT INTO students(speclevel,id_person,function) values ('$ssl','$person_id','$sfxn')";
         $result = mysqli_query($con,$query);
 
 

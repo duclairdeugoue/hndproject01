@@ -1,17 +1,5 @@
 <!-- <div class="container-fluid">
-    <div class="col">
-        <div class="card mt-5">
-            <div class="card-title my-2 ml-5">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Registration">Add New User </button> 
-            </div>
-            <div class="card-body">
-                <p id="delete-message"></p>
-                <div class="" id="table_display"></div>
-            </div>
-        </div>
-    </div>
-</div>  -->
-
+   
     <!-- Add student Modals-insert_modal -->
     <div class="modal fade" id="Addstudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -51,13 +39,17 @@
                                 <select class="form-control" id="ssexe" value ="Male" >
                                     <option value="Male">M</option>
                                     <option value="Female">F</option>
+                                    <option value="None">Other</option>
                                 </select>
                                 <div class="valid-feedback">Valid.</div>
                                 <div class="invalid-feedback">Please fill out this field.</div>
                             </div>
                             <div class="form-group col-sm-4">
                                 <label for="sfxn">Function :</label>
-                                <input type="text" class="form-control" placeholder="Enter function" id="sfxn">
+                                <select class="form-control" id="sfxn">
+                                <option value="Normal">Normal student</option>
+                                    <option value="Delegate">Delegate</option>
+                                </select>
                                 <div class="valid-feedback">Valid.</div>
                                 <div class="invalid-feedback">Please fill out this field.</div>
                                 <!-- <label for="amatricule">Matricule :</label>
@@ -80,10 +72,11 @@
                             <div class="form-group col-sm-4">
                                 <label for="sspeciality">Speciality</label>
                                 <select class="form-control" id="sspeciality" value="SWE">
-                                    <option value="SWE">Software Engineering</option>
-                                    <option value="NWS">Network and Security</option>
-                                    <option value="TEL">Telecomunication</option>
-                                    <option value="ACC">Accounting</option>
+                                    <option value="1">Software Engineering</option>
+                                    <option value="5">Network and Security</option>
+                                    <option value="3">Telecomunication</option>
+                                    <option value="7">Accounting</option>
+                                    <option value="8">Nursing</option>
                                 </select>
                                 <!-- <input type="text" class="form-control" placeholder="Enter the context of the task" id="nature" name="nature" > -->
                                 <div class="valid-feedback">Valid.</div>

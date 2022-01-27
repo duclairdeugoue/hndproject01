@@ -1,1 +1,1 @@
-<?php require '../index.php';?>
+<?php header("location: ../index.php");?>

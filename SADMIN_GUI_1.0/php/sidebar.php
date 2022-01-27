@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="homepage.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./SA_index.php">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -95,9 +95,9 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="../html/tables.php">
+        <a class="nav-link" href="./display_speciality_list.php">
             <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <span>Specialities</span></a>
     </li>
 
     <!-- Divider -->

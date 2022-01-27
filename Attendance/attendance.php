@@ -1,128 +1,119 @@
 <?php
 session_start();
-include('./includes/connection1.php');
-?>
-<!DOCTYPE html>
-<html lang="en">
+include "headerLinks.php"; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-    <link rel="stylesheet" href="./Myvendor1/bootstrap-4.0.0-dist/icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./Myvendor1/fontawesome-free-5.15.3-web/fontawesome-free-5.15.3-web/css/all.css">
-    <!-- Custom fonts for this template-->
-    <link href="./Myvendor1/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<title>attendance</title>
 
-    <!-- Custom styles for this template-->
-    <link href="./css/sb-admin-2.min.css" rel="stylesheet">
-    <style>
-        /* this style help to design the input field for the live search  */
-        /* body {
+
+
+<style>
+    /* this style help to design the input field for the live search  */
+    /* body {
             font-family: Arail, sans-serif;
         } */
 
-        /* Formatting search box */
-        .search-box,
-        .search-box1 {
-            /* width: 300px; */
-            position: relative;
-            display: inline-block;
-            /* font-size: 14px; */
-        }
+    /* Formatting search box */
+    .search-box,
+    .search-box1 {
+        /* width: 300px; */
+        position: relative;
+        display: inline-block;
+        /* font-size: 14px; */
+    }
 
-        /* .search-box input[type="text"] {
+    /* .search-box input[type="text"] {
             height: 32px;
             padding: 5px 10px;
             border: 1px solid #CCCCCC;
             font-size: 14px;
         } */
 
-        .result,
-        .result1 {
-            position: absolute;
-            z-index: 999;
-            top: 100%;
-            left: 0;
-        }
+    .result,
+    .result1 {
+        position: absolute;
+        z-index: 999;
+        top: 100%;
+        left: 0;
+    }
 
-        .search-box input[type="text"],
-        .search-box1 input[type="text"],
-        .result,
-        .result1 {
-            width: 100%;
-            box-sizing: border-box;
-        }
+    .search-box input[type="text"],
+    .search-box1 input[type="text"],
+    .result,
+    .result1 {
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-        /* Formatting result items */
-        .result p,
-        .result1 p {
-            margin: 0;
-            padding: 7px 10px;
-            border: 1px solid #CCCCCC;
-            border-top: none;
-            cursor: pointer;
-        }
+    /* Formatting result items */
+    .result p,
+    .result1 p {
+        margin: 0;
+        padding: 7px 10px;
+        border: 1px solid #CCCCCC;
+        border-top: none;
+        cursor: pointer;
+    }
 
-        .result p:hover,
-        .result1 p:hover {
-            background: blue;
-        }
-    </style>
-    <script>
-        //This script help to manage the period depending on the session
-        function change_session() {
-            var sessiontype = document.getElementById("session").value;
-            if (sessiontype == "") {
-                alert('Please fill the session input');
+    .result p:hover,
+    .result1 p:hover {
+        background: blue;
+    }
+</style>
+<script>
+    //This script help to manage the period depending on the session
+    function change_session() {
+        var sessiontype = document.getElementById("session").value;
+        if (sessiontype == "") {
+            alert('Please fill the session input');
 
-            } else if (sessiontype == "Morning") {
-                document.getElementById("period").addEventListener("click", function() {
-                    document.getElementById('hide').style.display = 'block';
-                    document.getElementById('hide1').style.display = 'block';
-                    document.getElementById('show1').style.display = 'none';
-                    document.getElementById('show2').style.display = 'none';
-                });
+        } else if (sessiontype == "Morning") {
+            document.getElementById("period").addEventListener("click", function() {
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('hide1').style.display = 'block';
+                document.getElementById('show1').style.display = 'none';
+                document.getElementById('show2').style.display = 'none';
 
-            } else if (sessiontype == "Afternoon") {
-                document.getElementById("period").addEventListener("click", function() {
-                    document.getElementById('show1').style.display = 'block';
-                    document.getElementById('show2').style.display = 'block';
-                    document.getElementById('hide').style.display = 'none';
-                    document.getElementById('hide1').style.display = 'none';
-                });
-            }
-            return 0;
 
-        }
+            });
 
-        function change_period() {
-            change_session();
-        }
-    </script>
-    <script>
-        function startTime() {
-            var today = new Date();
-            var h = today.getHours();
-            var m = today.getMinutes();
-            var s = today.getSeconds();
-            m = checkTime(m);
-            s = checkTime(s);
-            document.getElementById('txt').innerHTML =
-                h + ":" + m + ":" + s;
-            var t = setTimeout(startTime, 500);
-        }
+        } else if (sessiontype == "Afternoon") {
+            document.getElementById("period").addEventListener("click", function() {
 
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i
-            }; // add zero in front of numbers < 10
-            return i;
+                document.getElementById('show1').style.display = 'block';
+                document.getElementById('show2').style.display = 'block';
+                document.getElementById('hide').style.display = 'none';
+                document.getElementById('hide1').style.display = 'none';
+
+            });
         }
-    </script>
+        return 0;
+
+    }
+
+    function change_period() {
+        change_session();
+    }
+</script>
+<script>
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+            h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i
+        }; // add zero in front of numbers < 10
+        return i;
+    }
+</script>
 </head>
 
 <body onload="startTime()">
@@ -160,7 +151,7 @@ include('./includes/connection1.php');
                     <div class="card-title my-1 ml-1">
                         <div class="card-header">
                             <p class="p-2 text-center text-danger" id="errormsg"></p>
-                            <form class="form-inline d-md-flex justify-content-around" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                            <form class="form-inline d-md-flex justify-content-around" method="POST" action="attendance_process.php">
                                 <div class="form-group p-2 search-box">
                                     <label for="speciality" class="text-dark">Select speciality: </label>
                                     <input type="text" autocomplete="off" class="form-control mt-2" name="speciality" id="speciality" placeholder="Search speciality..." required>
@@ -181,21 +172,22 @@ include('./includes/connection1.php');
                                 </div>
                                 <div class="form-group p-2 d-inline-block">
                                     <label for="">Select session: </label>
-                                    <select class="form-control mt-2" id="session" name="session" id="session" onchange="change_session()" required>
+                                    <select class="form-control mt-2" id="session" name="session" id="session" required>
                                         <option value=""></option>
                                         <option value="Morning">Morning</option>
                                         <option value="Afternoon">Afternoon</option>
+                                        <option value="Evening">Evening</option>
                                     </select>
                                 </div>
                                 <div class="form-group p-2 d-inline-block">
                                     <label for="">Select period: </label>
-                                    <select class="form-control mt-2" onclick="change_period()" name="period" id="period" required>
+                                    <select class="form-control mt-2" name="period" id="period" required>
 
                                         <option id="" value=""></option>
-                                        <option id="hide" style="display: none;" value="08-10">08-10</option>
-                                        <option id="hide1" style="display: none;" value="10-12">10-12</option>
-                                        <option id="show1" value="12-15" style="display: none;">12-15</option>
-                                        <option id="show2" value="15-17" style="display: none;">15-17</option>
+                                        <option id="hide" class="morn" style="display: none;" value="morningOne">08-10</option>
+                                        <option id="hide1" class="morm" style="display: none;" value="morningTwo">10-12</option>
+                                        <option id="show1" class="after" value="afterOne" style="display: none;">12-15</option>
+                                        <option id="show2" class="after" value="afterTwo" style="display: none;">15-17</option>
                                     </select>
                                 </div>
                                 <div class="form-group p-2 ">
@@ -205,69 +197,9 @@ include('./includes/connection1.php');
                         </div>
 
                         <div class="card-body">
-                        <?php 
 
-                            if(isset($_POST['search_now'])){
-                                global $con;
-                                $speciality_select  = $_POST['speciality'];
-                                $level_select = $_POST['level'];
-                                $course_select = $_POST['course'];
-                                $session_select = $_POST['session'];
-                                $period_select = $_POST['period'];
-                                // include('./display_attendance_record.php');
 
-                                echo "  <p id='title-message' class='h4 text-info text-center'>List Of ".$speciality_select." Students</p>";
-                                // <div class="row" id="table_display_attendance"> -->
-                                $value = "";
-                                $value =  "<table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Matricule</th>
-                                            <th>Name</th>
-                                            <th>Speciality</th>
-                                            <th>Date of Birth</th>
-                                            <th>Sex</th>
-                                            <th class='text-center'> Present </th>
-                                            <th class='text-center'> Absent </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>";
 
-                                    // and students.speciality = $speciality_select AND students.level = $level_select
-                                        
-                                        $value .= '';
-
-                                        $i = 1;
-                                        $query = "SELECT distinct persons.id_person,persons.name,persons.surname,persons.sex,persons.date_of_birth,students.matricule,students.speciality,students.level from persons,students where persons.id_person=students.id_person and students.level = '$level_select' ";
-                                        $result = mysqli_query($con, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            // take note about this dot near the equalsign,they should be together
-                                            $value .= "<tr>
-                                                        <td>" . $i . "</td>
-                                                        <td>" . $row["matricule"] . "</td>
-                                                        <td>" . $row["name"] . "  " .  $row["surname"] . "</td>
-                                                        <td>" . $row["speciality"] . $row["level"] . "</td>
-                                                        <td>" . $row["date_of_birth"] . "</td>
-                                                        <td>" . $row["sex"] . "</td>
-                                                        <td class='text-center'><button class='btn btn-success ' id='btn_edit' data-id =" . $row["matricule"] . "><span class ='bi bi-check'></span></button></td>
-                                                        <td class='text-center'><button class='btn btn-danger' id='btn_delete' data-id1 =" . $row["matricule"] . "><span class ='bi bi-x'></span></button></td>
-                                                    </tr>";
-
-                                            $i = $i + 1;
-                                        }
-                                        // take note about this dot near the equalsign,they should be together
-                                        
-                                        // echo "<script> alert('Working'); </script>";
-                                    
-                                 $value .="   </tbody>
-                                </table>";
-                                echo $value;
-                            }
-
-                        ?>
-                       
-                        
                         </div>
                         <!-- End of Content Wrapper -->
 
@@ -288,20 +220,19 @@ include('./includes/connection1.php');
             ?>
 
 
-            <!-- Bootstrap core JavaScript-->
-            <script src="./Myvendor1/jquery/jquery.min.js"></script>
-            <script src="./Myvendor1/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script> <!-- helps to impliment dropdown-->
-
-            <!-- Core plugin JavaScript-->
-            <script src="./Myvendor1/jquery-easing/jquery.easing.min.js"></script>
-            <!-- <script src="./Myvendor1/bootstrap-4.0.0/js/bootstrap.min.js"></script> -->
-
-            <!-- Custom scripts for all pages-->
-            <script src="./Myvendor1/datatables/jquery.dataTables.min.js"></script>
-            <script src="./Myvendor1/datatables/dataTables.bootstrap4.min.js"></script>
-
-            <script src="./js/sb-admin-2.min.js"></script>
-            <script src="./js/demo/datatables-demo.js"></script>
+            <?php include "footerLinks.php"; ?>
+            <script>
+                $(document).ready(function() {
+                    $("#session").change(function () { 
+                        change_session();
+                    });
+                    $("#period").click(function () { 
+                        change_period();
+                        
+                    });
+                    
+                })
+            </script>
 
             <script>
                 // scprit to display speciality list

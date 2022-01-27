@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modals</title>
 </head>
 
 <body>
@@ -28,6 +28,76 @@
             </div>
         </div>
     </div>
+    <!-- Add department Modal_insert -->
+    <div class="modal fade" id="Add_departments" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add a new Department</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger" id="message_1"></p>
+                    <form action="" class="form">
+                    <div class="form-group">
+                        <label for="departmentName">Department Name :</label>
+                        <p class="text-danger" id="message_a"></p>
+                        <input type="text" class="form-control p-2" id="departmentName">
+                    </div>
+                    <div class="form-group">
+                        <label for="specialityName">Add atleast one speciality, Give the speciality name :</label>
+                        <p class="text-danger" id="message_b"></p>
+                        <input type="text" class="form-control p-2" id="specialityName">
+                    </div>
+
+                    <div class=" modal-footer form-group d-flex justify-content-between">
+
+                        <button type="button" class="btn btn-success" id="btn_add_department">Add Department</button>
+                        <button type="button" data-dismiss="modal" id="btn_close" class="btn btn-secondary">Cancel</button>
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Speciality Modal_insert -->
+    <div class="modal fade" id="Add_speciality" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add a New Speciality</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger" id="message_0"></p>
+                    <form action="" class="form">
+                    <div class="form-group">
+                        <label for="departmentName">Speciality Name :</label>
+                        <p class="text-danger" id="message_x"></p>
+                        <input type="text" class="form-control p-2" id="specialtyName">
+                    </div>
+                    <div class="form-group">
+                        <label for="specialityName">Department id :</label>
+                        <p class="text-danger" id="message_y"></p>
+                        <input type="text" class="form-control p-2" id="departmentID">
+                    </div>
+
+                    <div class=" modal-footer form-group d-flex justify-content-between">
+
+                        <button type="button" class="btn btn-success" id="btn_add_speciality">Add Speciality</button>
+                        <button type="button" data-dismiss="modal" id="btn_close" class="btn btn-secondary">Cancel</button>
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -42,7 +112,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p style="color: red;" id="message_1"></p>
+                    <p style="color: red;" id="message_4"></p>
                     <form action="" class="form needs-validation">
                         <div class="d-flex row">
                             <div class="form-group col-sm-6">
@@ -180,61 +250,15 @@
     </div>
 
     <!-- Modal to display speciality list -->
-    <div class="modal fade" id="Display_speciality" tabindex="-1" role="dialog" data-backdrop="static"  aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
+    <div class=" modal modal-fullscreen fade" id="Display_speciality" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><button type="button" class="btn btn-info" data-backdrop="static" data-toggle="modal" data-target="#AddSpeciality">Add New Speciality </button></h5>
+                <div class="modal-header"> 
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="card ">
-                        <div class="card-title my-2">
-                        <h1 class="text-center">LIST OF ALL SPECIALITES</h1>
-                            <div class="card-body">
-                                <!-- <p id=""></p> -->
-                                <!-- <div class="" id=""> -->
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="1">
-                                        <thead>
-                                            <tr>
-                                                <td>N°</td>
-                                                <td>Code</td>
-                                                <td>Name</td>
-                                                <td class="text-center"> View courses </td>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            global $con;
-                                            $i = 1;
-                                            $query = "select speciality_id,speciality_name from specialities";
-                                            $result = mysqli_query($con, $query);
-
-                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                // take note about this dot near the equalsign,they should be together
-                                                echo '<tr>
-                                                    <td>' . $i . '</td>
-                                                    <td>' . $row['speciality_id'] . '</td>
-                                                    <td>' . $row['speciality_name'] . '</td>
-                                                    <td class="text-center"><button class="btn btn-success " id="btn_update"><span class ="fa fa-edit"></span></button></td>
-                                                    
-                                                </tr>';
-                                                $i = $i + 1;
-                                            }
-
-
-
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                
-                            </div>
-                        </div>
-
-                    </div>
                     
                 </div>
                 <div class="modal-footer"></div>

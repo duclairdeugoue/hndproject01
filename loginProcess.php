@@ -57,7 +57,7 @@ include './includes/connection1.php';
                     $_SESSION['pwd'] = $password_b;
                     $_SESSION['user_is_logged_in'] = true;
                     $_SESSION['id']  = $id;
-                    $_SESSION['role']  = $_row['fucntion'];
+                    $_SESSION['role']  = $_row['function'];
                     
                     header("location: studentDelegateLogin.php");
                     exit;

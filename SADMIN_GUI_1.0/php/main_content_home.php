@@ -12,8 +12,39 @@
         <!-- Content Row -->
         <div class="row">
 
-            <!-- Card Example -->
-            <a class=" dropdown-item col-xl-3 col-md-6 mb-4" data-toggle="modal" data-target="#Display_speciality">
+            <!-- Card for departments -->
+            <a class=" dropdown-item col-xl-3 col-md-6 mb-4" data-backdrop="static" data-toggle="modal" href="#Add_departments">
+                <div class="align-items-center">
+                    <div class="card border-left-danger shadow h-100 pt-3 align-items-center">
+                        <div class="card-body ">
+                            <div class=" container-fluid no-gutters ">
+                                <i class="fas fa-user fa-3x text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="card-footer container-fluid ">
+                            <div class="text-xs font-weight-bold no-gutters  text-uppercase d-flex justify-content-between ">
+                                <span class="">Departments</span>
+                                <span class="rounded-circle bg-secondary text-white-50 px-1" id="department_count">
+                                <?php
+                                    global $con;
+                                    $i = 0;
+                                    $query = "SELECT department_id FROM `departments` WHERE 1";
+                                    $result = mysqli_query($con, $query);
+                                    while ($row = mysqli_fetch_assoc($result)) {
+
+                                        $i += 1;
+                                    }
+                                    echo $i;
+
+                                    ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- Card for speciality -->
+            <a class=" dropdown-item col-xl-3 col-md-6 mb-4" data-toggle="modal" href="#Add_speciality">
                 <div class=" align-items-center">
                     <div class="card border-left-primary shadow h-100 pt-3 align-items-center">
                         <div class="card-body ">
@@ -45,25 +76,7 @@
                 </div>
             </a>
 
-            <!-- Card Example -->
-            <a class=" dropdown-item col-xl-3 col-md-6 mb-4" href="#" data-toggle="modal" data-target="#newtask">
-                <div class="align-items-center">
-                    <div class="card border-left-danger shadow h-100 pt-3 align-items-center">
-                        <div class="card-body ">
-                            <div class=" container-fluid no-gutters ">
-                                <i class="fas fa-user fa-3x text-primary"></i>
-                            </div>
-                            <!-- <div class="h6 mb-0 font-weight-bold text-gray-800">$40,000</div> -->
-                        </div>
-                        <div class="card-footer container-fluid ">
-                            <div class="text-xs font-weight-bold no-gutters  text-uppercase d-flex justify-content-between ">
-                                <span class="">Clubs</span>
-                                <span class="rounded-circle bg-secondary text-white-50 px-1">7</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            
             <!-- Card Example -->
             <a class=" dropdown-item col-xl-3 col-md-6 mb-4" href="#" data-toggle="modal" data-target="#newtask">
                 <div class="align-items-center">

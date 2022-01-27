@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="A_index.php">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./A_index.php">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="A_index.php">
+        <a class="nav-link" href="./A_index.php">
             <i class="fas fa-fw fa-home"></i>
             <span>Dashboard</span></a>
     </li>
@@ -76,12 +76,11 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">LIST VIEW:</h6>
-                <a class="collapse-item" href="./attendance_report.php">Manage Attendance</a>
-                <a class="collapse-item" href="./display_student_list.php">Student List</a>
+                <a class="collapse-item" href="display_student_list.php">Student List</a>
+                <a class="collapse-item" href="display_lecturer_list.php">List of Lecturers</a>
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">List of Lecturers</a>
-                <a class="collapse-item" href="blank.html">List of Delgates</a>
+                <a class="collapse-item" href="blank.html">List of Courses</a>
             </div>
         </div>
     </li>
@@ -95,9 +94,9 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="../html/tables.php">
+        <a class="nav-link" href="./display_speciality_list.php">
             <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <span>Specialities</span></a>
     </li>
 
     <!-- Divider -->

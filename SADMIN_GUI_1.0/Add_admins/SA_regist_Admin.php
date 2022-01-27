@@ -19,7 +19,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add A New Admin</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">

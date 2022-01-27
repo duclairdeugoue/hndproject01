@@ -1,0 +1,29 @@
+
+@media screen and (min-width: 230px) {
+    .text-responsive{
+      font-size: 24px;
+    }
+}
+@media screen and (min-width: 713px) {
+    .text-responsive{
+        font-size: 30px;
+    }
+
+}
+@media screen and (min-width: 879px) {
+    .text-responsive{
+        font-size: 40px;
+    }
+
+}
+
+.scrollable{
+    width: 100%;
+    overflow-x:scroll;
+}
+/* @media screen and (min-width: 1077px) {
+    .scroll-table{
+        /* overflow-x: scroll; */
+        /* width: 20%; 
+    }
+} */

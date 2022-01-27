@@ -23,7 +23,7 @@
         if (!$result) {
             echo 'please check your query';
         } else {
-            echo 'Your record has been successfuly entered into our Database';
+            echo "<h3 class = 'text-bold text-success'>Your record has been successfuly entered into our Database</h3>";
         }
     }
     // To count the number of admin present in the DB
