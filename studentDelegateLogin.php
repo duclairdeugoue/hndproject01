@@ -20,6 +20,7 @@ if ($result) {
         exit;
     }
     else{
+        
         header("location: index.php");
         exit;
     }

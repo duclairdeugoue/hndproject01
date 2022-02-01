@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../includes/loginCheck.php';
+require '../includes/sa_loginCheck.php';
 
 include('./includes/connection1.php');
 ?>
@@ -11,7 +11,7 @@ include('./includes/connection1.php');
 
 <body id="page-top">
 
-    <?php require('../php/header.php'); ?>
+<?php require('../php/sa_header.php'); ?>
     <div id="wrapper">
 
         <?php include('./php/sidebar.php'); ?>

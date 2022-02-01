@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-require '../includes/loginCheck.php';
+require '../includes/a_loginCheck.php';
 include './includes/connection1.php';
 ?>
 <?php include('./includes/headerLinks.php'); ?>
@@ -10,7 +10,7 @@ include './includes/connection1.php';
 
 <body id="page-top">
 
-    <?php require('../php/header.php'); ?>
+    <?php require('../php/a_header.php'); ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
 

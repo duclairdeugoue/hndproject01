@@ -1,9 +1,9 @@
 <?php
 require_once("./includes/connection1.php");
-$_SESSION['user_is_logged_in'] = false;
+$_SESSION['auser_is_logged_in'] = false;
 
-unset($_SESSION["pwd"]);
-unset($_SESSION["uname"]);
+unset($_SESSION["apwd"]);
+unset($_SESSION["auname"]);
 
 session_destroy();
 

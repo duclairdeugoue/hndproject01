@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../includes/loginCheck.php';
+require '../includes/l_loginCheck.php';
 include "headerLinks.php";
 
 
@@ -13,14 +13,14 @@ include "headerLinks.php";
     
     <?php
     //  Topbar 
-    require('../php/header.php');
+    require('../php/l_header.php');
     // End of Topbar
 
     ?>
 <div class="container-fluid">
 
     <div class="row">
-        <h1 class="col-sm-6">Welcome <?php  echo  $_SESSION['uname'];  ?></h1>
+        <h1 class="col-sm-6">Welcome <?php  echo  $_SESSION['luname'];  ?></h1>
         <h1 class="col-sm-6 text-right "> <i>
             <?php 
                 $current_date = date('j F Y');

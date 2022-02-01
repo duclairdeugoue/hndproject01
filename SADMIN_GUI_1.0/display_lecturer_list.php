@@ -1,5 +1,6 @@
 <?php
 session_start();
+include '../includes/sa_loginCheck.php';
 include('./includes/connection1.php');
 ?>
 <!DOCTYPE html>
@@ -37,12 +38,9 @@ include('./includes/connection1.php');
         </div>
     </div> -->
 
-    <?php
-    //  Topbar 
-    require('../php/header.php');
+   
+    <?php require('../php/sa_header.php'); ?>
     // End of Topbar
-
-    ?>
     <!--  -->
     <!-- Page Wrapper -->
     <div id="wrapper">

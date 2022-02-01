@@ -1,7 +1,8 @@
 
 <?php 
 session_start();
-include "headerLinks.php"; ?>
+include "headerLinks.php"; 
+?>
 
 <title>attendanceprocess</title>
 </head>

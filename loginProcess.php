@@ -39,23 +39,23 @@ include './includes/connection1.php';
                     $id = $row["id_person"];
                 }
                 if ($ptype == 0) {
-                    $_SESSION['uname'] = $name_b;
-                    $_SESSION['pwd'] = $password_b;
-                    $_SESSION['user_is_logged_in'] = true;
+                    $_SESSION['sauname'] = $name_b;
+                    $_SESSION['sapwd'] = $password_b;
+                    $_SESSION['suser_is_logged_in'] = true;
 
                     header('location: SADMIN_GUI_1.0/SA_index.php');
                     exit;
                 } elseif ($ptype == 1) {
-                    $_SESSION['uname'] = $name_b;
-                    $_SESSION['pwd'] = $password_b;
-                    $_SESSION['user_is_logged_in'] = true;
+                    $_SESSION['auname'] = $name_b;
+                    $_SESSION['apwd'] = $password_b;
+                    $_SESSION['auser_is_logged_in'] = true;
 
                     header('location: ADMIN_GUI_2.0/A_index.php');
                     exit;
                 } elseif ($ptype == 2) {
-                    $_SESSION['uname'] = $name_b;
-                    $_SESSION['pwd'] = $password_b;
-                    $_SESSION['user_is_logged_in'] = true;
+                    $_SESSION['duname'] = $name_b;
+                    $_SESSION['dpwd'] = $password_b;
+                    $_SESSION['duser_is_logged_in'] = true;
                     $_SESSION['id']  = $id;
                     $_SESSION['role']  = $_row['function'];
                     
@@ -64,9 +64,9 @@ include './includes/connection1.php';
                     
                 }   
                  elseif ($ptype == 3) {
-                    $_SESSION['uname'] = $name_b;
-                    $_SESSION['pwd'] = $password_b;
-                    $_SESSION['user_is_logged_in'] = true;
+                    $_SESSION['luname'] = $name_b;
+                    $_SESSION['lpwd'] = $password_b;
+                    $_SESSION['luser_is_logged_in'] = true;
                     // require("./STUDENT_GUI/index.php");
                     header('location: Attendance/L_index.php');
                     exit;
