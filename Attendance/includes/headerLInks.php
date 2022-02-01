@@ -19,4 +19,7 @@ include('./includes/connection1.php');
     <!-- Custom styles for this template-->
     <link href="./css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/studentlandingPage.css">
+ 
+
+    
     
