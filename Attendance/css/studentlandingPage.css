@@ -67,3 +67,13 @@ body
         top: 30vh;
     }
 }
+scrollable{
+    width: 100%;
+    overflow-x:scroll;
+}
+/* @media screen and (min-width: 1077px) {
+    .scroll-table{
+        /* overflow-x: scroll; */
+        /* width: 20%; 
+    }
+} */
