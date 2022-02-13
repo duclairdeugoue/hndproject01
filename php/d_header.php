@@ -3,53 +3,12 @@
         <!-- Logo -->
         <div class="brand d-none d-sm-none d-md-inline-block">
             <i class="bi bi-octagon-fill" style="font-size: 2.0rem;" ></i>
-        </div>
-
-        <!-- Sidebar Toggle (Topbar)    note that this codes has effects when jQuery is implimented -->
-        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle">
-            <i class="fa fa-bars"></i>
-        </button>
-
-         
-
-        <!-- Topbar Search -->
-        <div class="d-none d-sm-inline-block form-inline mr-auto ml-3 my-2 my-md-0 navbar-search w-50 border ">
-            <div class="input-group">
-                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                    aria-label="Search" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
-            </div>
+            <span class="text-info" style="font-size: 30px; font-weight: bold;">Students Attendance Management</span>
         </div>
 
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-search fa-fw"></i>
-                </a>
-                <!-- Dropdown - Messages -->
-                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                    aria-labelledby="searchDropdown">
-                    <form class="form-inline mr-auto w-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search"
-                                aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </li>
+            
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
@@ -118,7 +77,7 @@
                     </h6>
                     <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="..//img/undraw_profile_2.svg"
+                            <img class="rounded-circle" src="../img/undraw_profile_2.svg"
                                 alt="...">
                             <div class="status-indicator bg-success"></div>
                         </div>
@@ -130,7 +89,7 @@
                     </a>
                     <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="..//img/undraw_profile_2.svg"
+                            <img class="rounded-circle" src="../img/undraw_profile_2.svg"
                                 alt="...">
                             <div class="status-indicator"></div>
                         </div>
@@ -142,7 +101,7 @@
                     </a>
                     <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="../ADMIN GUI 2.0/img/undraw_profile_3.svg"
+                            <img class="rounded-circle" src="../img/undraw_profile_3.svg"
                                 alt="...">
                             <div class="status-indicator bg-warning"></div>
                         </div>
@@ -154,7 +113,7 @@
                     </a>
                     <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                            <img class="rounded-circle" src="./img/undraw_profile_1.svg"
                                 alt="...">
                             <div class="status-indicator bg-success"></div>
                         </div>
@@ -172,9 +131,9 @@
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-white-600 small">
+                    <span class="mr-2 d-none d-lg-inline text-dark " style="font-weight: bold;">
                         
                         <?php
                             echo  $_SESSION['duname'];
@@ -182,7 +141,7 @@
                     </span>
 
                     <img class="img-profile rounded-circle"
-                        src="../ADMIN GUI 2.0/img/undraw_profile_2.svg">
+                        src="./img/undraw_profile_2.svg">
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
