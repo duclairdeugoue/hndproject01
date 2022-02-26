@@ -5,6 +5,9 @@
 <?php include "./includes/headerLInks.php"; ?>
 
 <?php include './includes/attendance_function.php'; ?>
+
+<?php //include './D_attendance_action.php' 
+?>
 <!-- include "./includes/connection1.php"; -->
 
 <title>Dashboard</title>
@@ -49,9 +52,11 @@
 
             <div class="card mx-4 mx-sm-1">
                 <div class="card-title ">
-                    <div class="card-header d-sm-flex d-md-flex justify-content-between">
+                    <div class="card-header d-sm-flex d-md-flex justify-content-between bg-gray">
                         <div class=""></div>
-                        <div class=" "><button type="button" class="btn btn-info col py-2 mt-3" data-backdrop="static" data-toggle="modal" data-target="#add_attendance">Create New Attendance </button>
+                        <!-- Button trigger modal -->
+                        <div class=" "><button type="button" class="btn btn-success col py-2 mt-3" data-backdrop="static" data-toggle="modal" data-target="#add_attendance">Create New
+                                Attendance </button>
                         </div>
 
                     </div>
@@ -59,9 +64,17 @@
                         <div class="text-center ">
                             <h3 class="text-responsive"><?php returnSpecialityNameAndLevel(); ?></h3>
                         </div>
-                        <div class="scrollable m-sm-2 m-md-4 pb-3" style="overflow-x:scroll;" id="">
-                            <?php displaySpecialityStudentList() ?>
+                        <div class="scrollable m-sm-2 m-md-4 pb-3" style="overflow-x:scroll;" id="studentListContainer">
+                            <?php //displaySpecialityStudentList(); 
+                            ?>
+                            <!-- to display the student attendance list-->
+
+                            </table>
+
                         </div>
+                    </div>
+                    <div class="card-footer py-2">
+                        <p id="testingAjax"></p>
                     </div>
 
                 </div>
@@ -76,6 +89,40 @@
 
     <?php include './php/delegate_modals.php'; ?>
     <?php include './includes/footerLinks.php'; ?>
+    <!-- Script -->
+    <script>
+        $(document).ready(function() {
+
+
+            displaySpecialityStudentList();
+
+            function displaySpecialityStudentList() {
+                var fetch = "fetchStudentList"
+                $.ajax({
+
+                    url: "D_attendance_action.php",
+                    method: "post",
+                    data: {
+                        action: fetch
+                    },
+                    success: function(data) {
+                        // Getting data from PHP page and asign to data variable
+                        data = JSON.parse(data);
+                        if ((data.status = "success")) {
+                            // We need to put '.html' to convert the var data to an html document
+                            // console.log(data.html);  just for testing
+                            $("#studentListContainer").html(data.html);
+                            $('#delegate_student_list_view').DataTable();
+                        }
+                    },
+                });
+            }
+
+            function performStudentsAttendanace() {
+
+            }
+        })
+    </script>
 </body>
 
 </html>
