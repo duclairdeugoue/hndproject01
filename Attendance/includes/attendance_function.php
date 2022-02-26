@@ -32,11 +32,9 @@ function returnSpecialityNameAndLevel()
     echo "  <p id='title-message' class='h4 text-secondary text-center' style = 'font-weight : bold;'>LIST OF 
          " . $specialityName . " " . $level . " STUDENTS</p>";
 }
-function returnSpecialityCourses()
-{
-}
-
-
+// function returnSpecialityCourses()
+// {
+// }
 
 function displaySpecialityStudentList()
 {
