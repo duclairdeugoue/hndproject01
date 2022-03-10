@@ -15,7 +15,7 @@
                 <h3 class="text-responsive">LIST OF ALL SPECIALITIES</h3>
             </div>
             <div class="scrollable px-3" id="">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <td class="text-center">N°</td>

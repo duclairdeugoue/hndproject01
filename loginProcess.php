@@ -63,14 +63,14 @@ include './includes/connection1.php';
                     exit;
                     
                 }   
-                 elseif ($ptype == 3) {
-                    $_SESSION['luname'] = $name_b;
-                    $_SESSION['lpwd'] = $password_b;
-                    $_SESSION['luser_is_logged_in'] = true;
-                    // require("./STUDENT_GUI/index.php");
-                    header('location: Attendance/L_index.php');
-                    exit;
-                 }
+                //  elseif ($ptype == 3) {
+                //     $_SESSION['duname'] = $name_b;
+                //     $_SESSION['dpwd'] = $password_b;
+                //     $_SESSION['duser_is_logged_in'] = true;
+                //     // require("./STUDENT_GUI/index.php");
+                //     header('location: Attendance/D_attendance.php');
+                //     exit;
+                //  }
                  else {
                     require('index.php');
                     // header("location:index.php");

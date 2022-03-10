@@ -18,10 +18,10 @@ include './database_connection.php';
         </div>
         <div class="">
             <h1 class="text-white text-responsive">Welcome <?php echo $_SESSION['duname'];?></h1>
-
+            <p class="text-warning" id="returnAttenanceCheckMsg"></p>
         </div>
         <div class="">
-            <a class="btn btn-outline-success btn-responsive mt-3 px-2 py-3" href="./D_attendance.php">Start Attendance Now</a>
+            <a class="btn btn-success btn-responsive mt-3 px-2 py-2" href="" id="getAttendanceStatus"></a>
         </div>
     </div>
 
