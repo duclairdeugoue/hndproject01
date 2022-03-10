@@ -12,6 +12,8 @@
 <script src="../Myvendor1/datatables/jquery.dataTables.min.js"></script>
 <script src="../Myvendor1/datatables/dataTables.bootstrap4.min.js"></script>
 
+<script src="../Myvendor1/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
 <script src="./js/sb-admin-2.min.js"></script>
 <script src="./js/demo/datatables-demo.js"></script>
-<!-- <script src="./js/D_attendance.js"></script> -->
+<script src="./js/D_attendance.js"></script>
